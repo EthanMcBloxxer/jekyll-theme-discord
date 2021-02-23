@@ -1,0 +1,36 @@
+<script type="text/javascript" id="analytics-script">
+      if(!window.doNotTrack=="1"||!window.navigator.doNotTrack=="1"||!window.navigator.msDoNotTrack=="1"){if(!navigator.globalPrivacyControl){
+        {% if site.gtag %}
+          {%- capture gtag -%}{{ site.gtag }}{%- endcapture -%}
+          {% include analytics/gtag.js gtag=gtag %}
+          {%- assign gtag = nil -%}
+        {% endif %}
+        {% if site.gtm %}
+          {%- capture gtm -%}{{ site.gtm }}{%- endcapture -%}
+          {% include analytics/gtm.js gtm=gtm %}
+          {%- assign gtm = nil -%}
+        {% endif %}
+        {% if site.matomo %}
+          {%- capture id -%}{{ site.matomo.id }}{%- endcapture -%}
+          {%- capture uri -%}{{ site.matomo.uri }}{%- endcapture -%}
+          {% include analytics/matomo.js id=id uri=uri %}
+          {%- assign id = nil -%}
+          {%- assign uri = nil -%}
+        {% endif %}
+        {% if site.quantcast %}
+          {%- capture pcode -%}{{ site.quantcast }}{%- endcapture -%}
+          {% include analytics/quantcast.js pcode=pcode %}
+          {%- assign pcode = nil -%}
+        {% endif %}
+        {% if site.amplitude %}
+          {%- capture key -%}{{ site.amplitude }}{%- endcapture -%}
+          {% include analytics/amplitude.js key=key %}
+          {%- assign key = nil -%}
+        {% endif %}
+        {% if site.hotjar %}
+          {%- capture id -%}{{ site.hotjar }}{%- endcapture -%}
+          {% include analytics/hotjar.js id=id %}
+          {%- assign id = nil -%}
+        {% endif %}
+      }}
+    </script>

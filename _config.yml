@@ -1,0 +1,66 @@
+# Don't use tabs unless they become spaces!
+
+# Site settings
+locale: "en-us" # find your locale with `navigator.language` in the console.
+
+title: jekyll-theme-discord # title to be shown under main avatar
+subtitle: A Microblog for Jekyll with Discord-style "DM"s # subtitle to be shown under title
+description: Created by EthanMcBloxxer <ethanmcbloxxer@protonmail.com>, this is a theme for Jekyll which has an aesthetic similar to that of Discord and their 'DM's. # RSS feed and search result description; don't use quotes if you can help it
+author:
+  name: Some Author # your name
+  email: "name@hosting.email" # email on click (header + footer)
+avatar:
+  path: "/assets/avatar.png" # primary avatar
+  circle: true # make avatar a circle
+  apple: "/assets/192x192.png" # 180x180 or 192x192 avatar for Apple devices; NO TRANSPARENCY
+  16: false # optional 16x16 "image/png" in head (specify URL if it exists)
+  32: false # optional 32x32 "image/png" in head (specify URL if it exists)
+  96: false # optional 96x96 "image/png" in head (specify URL if it exists)
+footer: true # have a footer
+
+# DM settings
+top-linebreak: true # add space between "attachment" + "label" and text
+bottom-linebreak: false # add space between text and "date" + "credit"
+codeblock-border: true # use discord's dark border around code blocks
+
+# Libraries
+jquery: false # add latest jquery.slim.min: ONLY FOR JAVASCRIPT DEVELOPERS. this may slow down the site considerably (like ~50ms).
+polyfill: false # insert created url from https://polyfill.io/v3/url-builder/, credit to Polyfill.io
+code-copy: true # make tiny "Copy to Clipboard" buttons for each code snippet, credit to ClipboardJS
+deep-links: true # make "#" urls for each paragraph and heading with a tiny animated "#", credit to AnchorJS
+mathjax: false # import the MathJax library: https://docs.mathjax.org
+
+# Files
+manifest: false # a manifest.webmanifest file for Google devices (please specify URL if it exists)
+browserconfig: false # a browserconfig.xml file for Microsoft devices (please specify URL if it exists)
+
+# Analytics
+# remove the # from the beginning of the following services and fill in the values in order to enable them.
+
+#gtag: "G-MYGOOGLEID" # your Google Analytics gtag.js ID (Meausurement ID)
+#gtm: "GTM-FOOBAR1" # your Google Tag Manager Container ID
+#quantcast: "p-pCodeWhatThat" # your Quantcast p-code
+#matomo: # Matomo (Piwik)
+#  uri: "demo.github.io"
+#  id: "1"
+#amplitude: "AmplitudeIsTheSuperiorAnalytics4" # your Amplitude API Key
+#hotjar: "4685270" # your Hotjar site ID
+
+# Comments
+# remove the # from the beginning of the following services and fill in the values in order to enable them.
+
+#disqus: "ethanmcbloxxer" # disqus shortname (not userid)
+#facebook-id: "App17" # create a facebook app and fill this in with the app id
+#utterances: "EthanMcBloxxer/ethanmcbloxxer.github.io" # username/repository (PLEASE ADD https://github.com/apps/utterances TO THE SPECIFIED REPO)
+
+# Jekyll config
+exclude: # exclude from built site
+  - Gemfile
+  - readme.md
+
+# DO NOT TOUCH (you CAN add to this, just don't remove anything)
+collections:
+  - dms
+plugins:
+  - jekyll-sitemap
+  - jekyll-gist

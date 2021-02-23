@@ -1,0 +1,529 @@
+---
+---
+
+html {
+  font-size: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #292b2f;
+
+  font-family: Whitney, Calibri, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: #dcddde;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 500;
+  line-height: 1.1;
+  text-align: center;
+  scroll-margin-top: 2rem;
+}
+h1 {
+  font-size: 2.75rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h1, h2, h3 {
+  margin-top: 0.4rem;
+}
+
+a {
+  color: #3087e8;
+}
+
+h1#title {
+  margin: auto;
+  font-size: 5vw;
+}
+h2#subtitle {
+  margin: auto;
+  font-size: 2.5vw;
+  margin-top: -0.15rem;
+}
+h3#author {
+  margin: auto;
+  font-size: 1.5vw;
+  color: #dcddde70;
+}
+img#avatar {
+  max-width: 10%;
+  {% if site.avatar.circle %} border-radius: 100%; {% endif %}
+}
+@media (max-width: 800px) {
+  h1#title {
+    font-size: 7.5vw;
+  }
+  h2#subtitle {
+    font-size: 3.5vw;
+  }
+  h3#author {
+    font-size: 2.5vw;
+  }
+  img#avatar {
+    max-width: 25%;
+  }
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+header {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+{% if site.footer %}
+footer {
+  font-family: 'Open Sans';
+  font-size: 1rem;
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  background: #32363a;
+  width: 100%;
+  padding: 1rem;
+  z-index: 5;
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local(''),
+    url('{{ site.baseurl }}/assets/font/open-sans/300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('{{ site.baseurl }}/assets/font/open-sans/300.woff') format('woff'),   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('{{ site.baseurl }}/assets/font/open-sans/300.ttf') format('truetype');/* Safari, Android, iOS */
+  font-display: swap;
+}
+@media (max-width: 460px) {
+  #copyright-text {
+    display: none;
+  }
+}
+{% endif %}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr {
+  height: 0.05rem;
+  background-color: #dcddde70;
+  border: none;
+  margin-bottom: 1rem;
+  width: 80%;
+}
+
+a.nostyle {
+  color: inherit;
+  text-decoration: none;
+}
+.center {
+  text-align: center;
+}
+button.copycode {
+  float: right;
+  background: none;
+  background: none;
+  color: #dcddde70;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  margin: 0.1rem;
+}
+img.copyimg {
+  width: 1rem;
+}
+svg.copyimg {
+  width: 1rem;
+}
+p.top1rem {
+  margin-top: 1rem;
+}
+::selection {
+  color: #d8ffff;
+  background: #0b68d9;
+}
+::-moz-selection {
+  color: #d8ffff;
+  background: #0b68d9;
+}
+
+/* Foreground: Discord.css, most elements ripped from the Discord application */
+
+.dm-container {
+  position: relative;
+  margin: auto;
+  margin-bottom: 1rem;
+  padding: 0.5em;
+  width: 60%;
+  display: block;
+  border-radius: 10px;
+  overflow-x: auto;
+
+  color: #dcddde;
+  background: #36393f;
+  font-family: Whitney, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+
+  transition: all 0.5s;
+}
+
+@media (max-width: 1100px) {
+  .dm-container {
+    width: 80%;
+  }
+}
+@media (max-width: 900px) {
+  .dm-container {
+    width: 90%;
+  }
+}
+
+.dm-container p {
+  margin-top: auto;
+  text-align: center;
+}
+
+.dm-timestamp {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0.2rem;
+  margin-left: 0.15rem;
+
+  color: #dcddde70;
+  font-size: 0.9rem;
+}
+
+.dm-credit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 0.2rem;
+  margin-right: 0.4rem;
+
+  color: #dcddde70;
+  font-size: 0.9rem;
+}
+
+.dm-attachment {
+  position: absolute;
+  bottom: unset;
+  top: 0;
+  margin-top: 0.2rem;
+  margin-left: 0.075rem;
+}
+a.dm-attachment {
+  color: #dcddde70;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.dm-label {
+  position: absolute;
+  bottom: unset;
+  top: 0;
+  right: 0;
+  margin-top: 0.2rem;
+  margin-right: 0.5rem;
+  color: #dcddde70;
+  font-size: 0.9rem;
+}
+.dm-label a {
+  color: #dcddde70;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.\@ {
+  border-radius: 3px;
+  padding: 0px 2px;
+  font-weight: 500;
+  unicode-bidi: -moz-plaintext;
+  unicode-bidi: plaintext;
+  color: #7289da;
+  background: rgba(114,137,218,.1);
+  position: relative;
+  margin: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: Whitney, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-transition: background-color 50ms ease-out,color 50ms ease-out;
+  transition: background-color 50ms ease-out,color 50ms ease-out;
+  cursor: pointer;
+}
+.\@:hover,
+.\@ a:hover {
+  border-radius: 3px;
+  color: #fff;
+  background-color: #7289da;
+}
+.\@ a {
+  text-decoration: none;
+}
+
+/* END */
+
+/* Custom Markdown Types */
+
+p.left {
+  text-align: left;
+}
+p.center {
+  text-align: center;
+}
+p.right {
+  text-align: right;
+}
+.\* {
+  font-style: italic;
+}
+.\*\* {
+  font-weight: bold;
+}
+.\*\*\* {
+  font-style: oblique;
+}
+.\_\_ {
+  text-decoration: underline;
+}
+.\~\~ {
+  text-decoration: line-through;
+}
+.\|\| {
+  display: table;
+  color: #202225;
+  background-color: #202225;
+  border-radius: 5px;
+  padding: 0 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.\|\|:hover {
+  color: #dcddde;
+  background-color: #4b4d53;
+}
+
+/* END */
+
+/* AnchorJS Custom Styles */
+
+.anchorjs-link {
+  transition: all .25s linear;
+  color: #ff865f;
+}
+.anchorjs-link:hover {
+  text-decoration: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+}
+
+/* END */
+
+blockquote {
+  font-style: italic;
+  padding: 0.625rem 1.25rem;
+  margin: 0 0 1.25rem;
+  font-size: 1.1rem;
+  border-left: 0.3125rem solid #4f545c;
+}
+blockquote p {
+  text-align: left !important;
+}
+blockquote p:first-child {
+  margin-top: 0;
+}
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Code via Pygments Highlights used for Rogue */
+
+.highlight  {
+  background-color: #2f3136;
+  width: auto;
+  height: auto;
+  padding: .35rem;
+  margin: -.2em 0;
+  margin-bottom: 1.2rem;
+  border-radius: 3px;
+  font-size: 85%;
+  font-family: Consolas, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Monaco, Courier New, Courier, monospace;
+  text-indent: 0;
+  border: none;
+  white-space: pre-wrap;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-indent: 0;
+  white-space: pre-wrap;
+}
+{% if site.codeblock-border == true %} div.highlight {border: 1px solid #202225;} {% endif %}
+.highlight pre { background-color: #2f3136; font-size: 16px; margin: unset; }
+.highlight .c {  color: #999999; font-style: italic } /* Comment */
+.highlight .err {color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .g {  color: #d0d0d0 } /* Generic */
+.highlight .k {  color: #6ab825; font-weight: bold } /* Keyword */
+.highlight .l {  color: #d0d0d0 } /* Literal */
+.highlight .n {  color: #d0d0d0 } /* Name */
+.highlight .o {  color: #d0d0d0 } /* Operator */
+.highlight .x {  color: #d0d0d0 } /* Other */
+.highlight .p {  color: #d0d0d0 } /* Punctuation */
+.highlight .cm { color: #999999; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #cd2828; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999999; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #e50808; font-weight: bold; background-color: #520000 } /* Comment.Special */
+.highlight .gd { color: #d22323 } /* Generic.Deleted */
+.highlight .ge { color: #d0d0d0; font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #d22323 } /* Generic.Error */
+.highlight .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #589819 } /* Generic.Inserted */
+.highlight .go { color: #cccccc } /* Generic.Output */
+.highlight .gp { color: #aaaaaa } /* Generic.Prompt */
+.highlight .gs { color: #d0d0d0; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #ffffff; text-decoration: underline } /* Generic.Subheading */
+.highlight .gt { color: #d22323 } /* Generic.Traceback */
+.highlight .kc { color: #6ab825; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #6ab825; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #6ab825; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #6ab825 } /* Keyword.Pseudo */
+.highlight .kr { color: #6ab825; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #6ab825; font-weight: bold } /* Keyword.Type */
+.highlight .ld { color: #d0d0d0 } /* Literal.Date */
+.highlight .m {  color: #3677a9 } /* Literal.Number */
+.highlight .s {  color: #ed9d13 } /* Literal.String */
+.highlight .na { color: #bbbbbb } /* Name.Attribute */
+.highlight .nb { color: #24909d } /* Name.Builtin */
+.highlight .nc { color: #447fcf; text-decoration: underline } /* Name.Class */
+.highlight .no { color: #40ffff } /* Name.Constant */
+.highlight .nd { color: #ffa500 } /* Name.Decorator */
+.highlight .ni { color: #d0d0d0 } /* Name.Entity */
+.highlight .ne { color: #bbbbbb } /* Name.Exception */
+.highlight .nf { color: #447fcf } /* Name.Function */
+.highlight .nl { color: #d0d0d0 } /* Name.Label */
+.highlight .nn { color: #447fcf; text-decoration: underline } /* Name.Namespace */
+.highlight .nx { color: #d0d0d0 } /* Name.Other */
+.highlight .py { color: #d0d0d0 } /* Name.Property */
+.highlight .nt { color: #6ab825; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #40ffff } /* Name.Variable */
+.highlight .ow { color: #6ab825; font-weight: bold } /* Operator.Word */
+.highlight .w {  color: #666666 } /* Text.Whitespace */
+.highlight .mf { color: #3677a9 } /* Literal.Number.Float */
+.highlight .mh { color: #3677a9 } /* Literal.Number.Hex */
+.highlight .mi { color: #3677a9 } /* Literal.Number.Integer */
+.highlight .mo { color: #3677a9 } /* Literal.Number.Oct */
+.highlight .sb { color: #ed9d13 } /* Literal.String.Backtick */
+.highlight .sc { color: #ed9d13 } /* Literal.String.Char */
+.highlight .sd { color: #ed9d13 } /* Literal.String.Doc */
+.highlight .s2 { color: #ed9d13 } /* Literal.String.Double */
+.highlight .se { color: #ed9d13 } /* Literal.String.Escape */
+.highlight .sh { color: #ed9d13 } /* Literal.String.Heredoc */
+.highlight .si { color: #ed9d13 } /* Literal.String.Interpol */
+.highlight .sx { color: #ffa500 } /* Literal.String.Other */
+.highlight .sr { color: #ed9d13 } /* Literal.String.Regex */
+.highlight .s1 { color: #ed9d13 } /* Literal.String.Single */
+.highlight .ss { color: #ed9d13 } /* Literal.String.Symbol */
+.highlight .bp { color: #24909d } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #40ffff } /* Name.Variable.Class */
+.highlight .vg { color: #40ffff } /* Name.Variable.Global */
+.highlight .vi { color: #40ffff } /* Name.Variable.Instance */
+.highlight .il { color: #3677a9 } /* Literal.Number.Integer.Long */
+
+/* END */
+
+/* GitHub Gist reboot.css */
+.gist .gist-file {
+  border-color: rgba(112, 112, 112, 0.5) !important;
+}
+
+.gist .gist-data,
+.gist .gist-meta {
+  background-color: inherit !important;
+  border-bottom: none !important;
+}
+.gist .gist-meta {
+  color: #dcddde !important;
+}
+.gist .gist-meta a {
+  color: #dcddde !important;
+}
+
+.gist .markdown-body h1, .gist .markdown-body h2 {
+  border-color: rgba(112, 112, 112, 0.5) !important;
+}
+
+.gist p, .gist h1, .gist h2, .gist h3, .gist h4, .gist h5, .gist h6 {
+  color: #dcddde;
+}
+
+.gist .highlight {
+  background-color: rgba(0, 0, 0, 0) !important;
+  color: #e7e7e7 !important;
+}
+
+.gist .blob-code, .gist .blob-num {
+  color: #dcddde !important;
+}
+
+.gist .blob-code-inner {
+  color: #dcddde !important;
+}
+
+.gist .pl-c1, .gist .pl-s .pl-v {
+  color: #ffae00 !important;
+}
+
+.gist .pl-s .pl-s1, .gist .pl-smi {
+  color: #dcddde !important;
+}
+
+.gist .pl-pds, .gist .pl-s, .gist .pl-s .pl-pse .pl-s1, .gist .pl-sr, .gist .pl-sr .pl-cce, .gist .pl-sr .pl-sra, .gist .pl-sr .pl-sre {
+  color: #00ffd9 !important;
+}
+
+.gist .pl-e, .gist .pl-en {
+  color: #ff00e2 !important;
+}
+/* END */
+
+/* Custom Scrollbar on Webkit + Gecko devices */
+::-webkit-scrollbar {
+  background-color: #292b2f !important;
+  color: #aba499 !important;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #454a4d !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #575e62 !important;
+}
+::-webkit-scrollbar-thumb:active {
+  background-color: #484e51 !important;
+}
+::-webkit-scrollbar-corner {
+  background-color: #181a1b !important;
+
+* {
+  scrollbar-color: #292b2f #454a4d !important;
+}
+/* END */

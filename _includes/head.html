@@ -1,0 +1,38 @@
+  <head>
+    <meta charset="{{ site.encoding | default: 'utf-8' }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ site.title }}</title>
+    <meta property="og:title" content="{{ site.title }}"/>
+
+    <meta name="description" content="{{ site.description }}"/>
+    <meta property="og:description" content="{{ site.description }}"/>
+
+    <meta name="author" content="Chris Mills"/>
+    <meta property="og:locale" content="{{ site.locale }}"/>{% if page.id %}
+    <meta property="og:type" content="article">
+    <meta property="og:article:author" content="{{ site.author.name }}">
+    <meta property="og:article:published_time" content="{{ page.date | date_to_xmlschema }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <link rel="canonical" href="{{ site.baseurl | absolute_url }}">
+    {% else %}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | absolute_url | strip_index }}">
+    <link rel="canonical" href="{{ site.baseurl| absolute_url | strip_index }}">{% endif %}
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/reboot.css"/>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css"/>
+
+    <link rel="icon" type="image/png" href="{{ site.avatar.path }}" />
+    {% if site.avatar.96 %}<link rel="icon" type="image/png" sizes="96x96" href="{{ site.avatar.96 }}"/>{% endif %}
+    {% if site.avatar.32 %}<link rel="icon" type="image/png" sizes="32x32" href="{{ site.avatar.32 }}"/>{% endif %}
+    {% if site.avatar.16 %}<link rel="icon" type="image/png" sizes="16x16" href="{{ site.avatar.16 }}"/>{% endif %}
+
+    <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" />
+    {% if site.avatar.apple %}<link rel="apple-touch-icon" href="{{ site.avatar.apple }}"/>{% endif %}
+
+    {% if site.manifest %}<link rel="manifest" href="{{ site.manifest }}" />{% endif %}
+    {% if site.browserconfig %}<meta name="msapplication-config" content="{{ site.browserconfig }}"/>{% endif %}
+
+    {% if site.jquery %}{% include libraries/jquery.html %}{% endif %}
+  </head>

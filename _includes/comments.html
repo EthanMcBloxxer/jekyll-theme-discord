@@ -1,0 +1,15 @@
+{% if site.disqus %}
+	{%- capture shortname -%}{{ site.disqus }}{%- endcapture -%}
+	{% include comments/disqus.html shortname=shortname %}
+	{%- assign shortname = nil -%}
+{% endif %}
+{% if site.facebook-id %}
+	{%- capture id -%}{{ site.facebook-id }}{%- endcapture -%}
+	{% include comments/facebook.html id=id %}
+	{%- assign id = nil -%}
+{% endif %}
+{% if site.utterances %}
+	{%- capture repo -%}{{ site.utterances }}{%- endcapture -%}
+	{% include comments/utterances.html repo=repo %}
+	{%- assign repo = nil -%}
+{% endif %}

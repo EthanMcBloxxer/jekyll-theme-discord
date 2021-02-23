@@ -1,0 +1,10 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="{{ page.language | default: site.language | default: 'en' }}">
+{% include head.html %}  <body>
+    {{ content }}  {% include libraries.html %}
+    {% if site.gtag or site.gtm or site.matomo or site.quantcast or site.amplitude or site.hotjar %}{%- include analytics.html -%}{% endif %}
+    {% if site.footer %}{% include footer.html %}{% endif %}  </body>
+</html>
