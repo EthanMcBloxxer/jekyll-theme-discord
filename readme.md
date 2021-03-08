@@ -99,7 +99,7 @@ And select `main` if you followed:
 ![GitHub Pages settings preview](https://bloxxing.is-ne.at/GXf5Vq.png)
 
 ## Adding Content
-If you're ready to start adding your own content, then make a new file called **\_dms/**(any filename)**.md** with content like this:
+If you're ready to start adding your own content, then make a new file called **\_dms/**(any filename)**.md** (I recommend a list starting with 000, like your first DM will be `0001.md`, 10th `0010.md`, and so on) with content like this:
 
 ```markdown
 ---
